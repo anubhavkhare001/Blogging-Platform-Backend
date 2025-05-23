@@ -54,12 +54,20 @@ CREATE TABLE posts (
 1. Clone the repo
 
 2. Add a .env file:
-    PORT=5000
-    DB_HOST=localhost
-    DB_USER=root
-    DB_PASS=your_password
-    DB_NAME=blog_platform
-    JWT_SECRET=your_secret
+     Server settings
+        PORT=5000
+
+    MySQL Database settings
+        DB_HOST=localhost
+        DB_USER=root
+        DB_PASSWORD=your_password
+        DB_NAME=your_database_name
+
+# JWT Secret
+      JWT_SECRET=your_super_secret_key
+
+# CORS frontend URL (adjust to your React app port)
+# CLIENT_URL=http://localhost:3000
 
 3. Install dependencies:
     npm install
