@@ -7,29 +7,23 @@ This is the **Node.js + Express backend** for the full-stack Blogging Platform a
 - Node.js
 - Express
 - MySQL
-- ReactJS
-- Bootstrap + React-Bootstrap
-- Axios
-- React Router
-- CKEditor 5
 - JWT (Authentication)
 - bcryptjs (Password hashing)
+- dotenv (Environment variables)
 
 ## ✨ Features
 
-- User Signup/Login with JWT
-- Create, edit, delete blog posts (rich text editor)
-- Public post viewing
-- User dashboard to manage personal posts
-- Protected routes for authenticated actions
-- Responsive design using Bootstrap
+- User Signup/Login with hashed passwords
+- JWT-based auth middleware
+- CRUD operations on blog posts
+- Author-only access to edit/delete posts
 
 ## 🧠 AI Tools Used
 
-- [ChatGPT](https://chat.openai.com) was used to:
-  - Understand and implement JWT-based authentication flow in the frontend
-  - Assist with integrating Bootstrap components and layout
-  - Troubleshoot React routing and context management
+- [ChatGPT](https://chat.openai.com) for:
+  - Code generation
+  - Middleware and route setup
+  - Error handling & SQL queries
 
 ## 🗃️ MySQL Setup
 
@@ -55,35 +49,20 @@ CREATE TABLE posts (
   FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
+🚀 Setup Instructions
 
-## 🚀 Setup Instructions
+1. Clone the repo
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/blog-platform-frontend
-   cd blog-platform-frontend
+2. Add a .env file:
+    PORT=5000
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASS=your_password
+    DB_NAME=blog_platform
+    JWT_SECRET=your_secret
 
-2. Install dependencies:
+3. Install dependencies:
     npm install
 
-3. Start the development server:
-    npm start
-
-📁 Folder Structure
-
-src/
-├── components/
-│   └── Navbar.js
-├── context/
-│   └── AuthContext.js
-├── pages/
-│   ├── Home.js
-│   ├── Login.js
-│   ├── Signup.js
-│   ├── Dashboard.js
-│   ├── NewPost.js
-│   ├── EditPost.js
-│   └── PostDetail.js
-└── App.js
-
-
+4. Run the server:
+    node server.js
